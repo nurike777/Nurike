@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+}
+/* header */
+header{
+    height: 90px;
+    border-bottom: 1px solid #f0f2f7;
+}
+
+.icon-menu{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 90px;
+    box-sizing: border-box;
+    border-right: 1px solid #f0f2f7;
+}
+
+.logo{
+    position: absolute;
+}
+.nav-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    display: inline;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 15px;
+}
+a{
+    text-decoration: none;
+    color: #343e5c;
+}
+.lnk-menu{
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+.lnk-menu a{
+    text-decoration: none;
+    color: #b9bed1;
+}
+.lnk-menu a:active, .lnk-menu a:hover{
+    color: #343e5c;
+}
+
+.btn-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btn-signin{
+    width: 85px;
+    height: 32px;
+    border-radius: 16px;
+    border: 2px solid #e3e8f0;
+}
+.btn-signin a{
+    overflow: hidden;
+    display: block;
+    padding: 10px 20px;
+    color: #343e5c;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+/* main */
+main{
+    width: 1400px;
+    height: 500px;
+    background-color: #1c1e23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-main{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+h1{
+    width: 306px;
+    height: 86px;
+    color: #ffffff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+}
+p{
+    width: 461px;
+    height: 65px;
+    color: #ffffff;
+    font-family: "Crimson Text - Roman";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
