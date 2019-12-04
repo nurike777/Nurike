@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="src\css\style.css">
     <link rel="stylesheet" href="src\css\media.css">
     <link href="https://fonts.googleapis.com/css?family=Actor|Source+Sans+Pro:400,600&display=swap" rel="stylesheet">
-    <script src="src\script.js"></script>
-    
 </head>
 <body>
     <!-- top panel -->
@@ -17,11 +15,22 @@
         <div class="container">
             <div class="header-row">
                 <div class="header__block">
-                    <a href="header_menu">
-                        <i><img src="src/assets/img/icons/burger.svg" alt=""></i>
+                    <!-- mobile-menu -->
+                    <a href="#" class="header_menu">
+                        <i><img class="menu__img" src="src/assets/img/icons/burger.svg" alt=""></i>
                     </a>
+                    <div class="m-menu js-menu">
+                        <nav class="m-menu__nav">
+                            <a href="#" class="m-menu__nav-link">TOURS</a>
+                            <a href="#" class="m-menu__nav-link">ATTRACTIONS</a>
+                            <a href="#" class="m-menu__nav-link">MUSEUMS</a>
+                            <a href="#" class="m-menu__nav-link">DISCOUNT PASSES</a>
+                            <a href="#" class="m-menu__nav-link">NEIGHBORHOODS</a>
+                        </nav>
+                    </div>
+                    <!-- ! -->
                     <div class="header__logo">
-                        <img src="src\assets\img\logo.svg" alt="logo">
+                        <img class="logo__img" src="src\assets\img\logo.svg" alt="logo">
                     </div>    
                     <div class="header__search">
                         <input type="search" class="header__input" placeholder="Search New York">
@@ -34,7 +43,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="header__icons">
+                <div class="header__icons visible-wide">
                     <a href="#" class="header__link visible">
                         <img class="header__link-img" src="src\assets\img\icons\help.svg" alt="">
                         <span>Help</span>
@@ -49,10 +58,22 @@
                     </a>
                     <a href="#" class="header__link header__link--login">
                         <img class="header__link-img" src="src\assets\img\icons\login.svg" alt="">
-                        <span>Login</span>  
+                        <span>Log In</span>  
                     </a>
                     <span class="header__link-line">|</span>
                     <a href="#" class="header__link"><span>Register</span></a>
+                </div>
+                
+                <div class="m-header__icons">
+                    <a href="#" class="m-header__link">
+                        <img class="m-header__link-img" src="src\assets\img\mobile-icon/question-circle.svg" alt="">
+                    </a>
+                    <a href="#" class="m-header__link">
+                        <img class="m-header__link-img" src="src\assets\img\mobile-icon/search.svg" alt="">
+                    </a>
+                    <a href="#" class="m-header__link">
+                        <img class="m-header__link-img" src="src\assets\img\mobile-icon/user.svg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -79,18 +100,26 @@
                 </div>  
                 <div class="info-tittle">New York City Museum</div>
             </div>    
-                <div class="slider-container">
-                    <div class="slider__plan">
-                        <img class="slider__img" src="src/assets/img/Guggenheim.jpg" alt="Guggenheim">
-                    </div>
-                    <a class="prev" onclick="plusSlides(-1)"><img class="slider__prev" src="src\assets\img\icons\chevron-left.svg" alt=""></a>
-                    <a class="next" onclick="plusSlides(1)"><img class="slider__prev" src="src\assets\img\icons\chevron-right.svg" alt=""></a>
+            <div class="slider-container">
+                <div class="slider__plan">
+                    <img class="slider__img" src="src/assets/img/Guggenheim.jpg" alt="Guggenheim">
                 </div>
-                <div class="container">
+                <div class="slider__plan">
+                    <img class="slider__img" src="src/assets/img/Brooklyn_museum.jpg" alt="Guggenheim">
+                </div>
+                <div class="slider__plan">
+                        <img class="slider__img" src="src/assets/img/Metropolitan-museum.jpg" alt="Guggenheim">
+                    </div>
+                <a class="prev" onclick="plusSlides(-1)"><img class="slider__prev" src="src\assets\img\icons\chevron-left.svg" alt=""></a>
+                <a class="next" onclick="plusSlides(1)"><img class="slider__prev" src="src\assets\img\icons\chevron-right.svg" alt=""></a>
+            </div>
+        </section>
+        <section>
+            <div class="container">
                 <div class="info-row-panel">
-                    <div class="info-text">Museums</div>
+                    <h2 class="info-text">Museums</h2>
                     <div class="info__list info__list-one">
-                        <select class="info__list-bottom">
+                        <select class="info__item">
                             <option>Subcategories</option>
                             <option value="Art Museums">Art Museums</option>
                             <option value="History Museums">History Museums</option>
@@ -98,7 +127,7 @@
                         </select>
                     </div>
                     <div class="info__list info__list-two">
-                        <select class="info__list-bottom">
+                        <select class="info__item info__item-two">
                             <option >Neighborhoods</option>
                             <option value="Flatiron">Flatiron</option>
                             <option value="Chelsea">Chelsea</option>
@@ -107,8 +136,8 @@
                             <option value="Upper West Side">Upper West Side</option>
                         </select>
                     </div>
-                    <div class="info__list info__list-three">
-                        <select class="info__list-bottom">
+                    <div class="info__list">
+                        <select class="info__item info__item-three">
                             <option>Duration</option>
                             <option value="Up to 1 Hour">Up to 1 Hour</option>
                             <option value="1-6 Hours">1-6 Hours</option>
@@ -118,8 +147,51 @@
                     </div>
                 </div>
             </div>
-        </section>
 
+            <div class="change-row">
+                <button class="change__button change__button-map" type="button" id="MapBtn">Map</button>
+                <button class="change__button change__button-list" type="button">List</button>
+                <button class="change__button change__button-filter" type="button" id="FilterBtn">Filter</button>
+            </div>
+            <div class="modal" id="MyModal">
+                <div class="modal-filter">
+                <form class="content__filter" action="">
+                    <div class="filter-close"><span class="modal-filter__close">Filter</span></div>
+                    <div class="filter-column">
+                        <span class="filter__tittle">Subcategories</span>
+                        <div class="filter-col-block">
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Art Museums</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>History Museums</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Outdoor Museums</label>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <span class="filter__tittle">Neighborhoods</span>
+                        <div class="filter-col-block">
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Flatiron</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Chelsea</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Financial District</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Upper East Side</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Upper West Side</label>
+                        </div>
+                    </div>
+                    <div class="filter-column">
+                        <span class="filter__tittle">Duration</span>
+                        <div class="filter-col-block">
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>Up to 1 Hour</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>1-6 Hours</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>4 Hours t 1 Day</label>
+                            <label><input class="filter__input" type="checkbox"><span class="check__box"></span>More Than 1 Day</label>
+                        </div>
+                    </div>
+                    <div class="filter__btn"> 
+                        <button class="filter__button" type="button">Reset</button>
+                        <button class="filter__button filter__button-go" type="button">Go</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </section>
         <section class="content">
             <div class="content-block">
                 <div class="container-wide">
@@ -136,131 +208,132 @@
                     <div class="content__row">
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/01.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img  class="content__img" src="src/assets/img/museums/01.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Museum of Art Tour with Skip-the-Line Acces</p>
+                            <h4 class="content-card__tittle">Museum of Art Tour with Skip-the-Line Acces</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/02.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/02.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The Bronx Museum of the Arts Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The Bronx Museum of the Arts Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/03.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/03.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Brooklyn Museum of the Arts Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Brooklyn Museum of the Arts Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/04.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/04.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">American Folk Art Museum Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">American Folk Art Museum Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/05.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/05.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The Frick Collection Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The Frick Collection Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/06.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/06.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Guggenheim Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Guggenheim Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/07.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/07.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Hall of Science Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Hall of Science Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/08.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/08.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The Intrepid Museum Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The Intrepid Museum Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/09.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/09.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Metropolitan Museum of Art Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Metropolitan Museum of Art Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/10.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/10.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The Museum of Modern Art Admission with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The Museum of Modern Art Admission with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/11.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/11.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Morgan Library Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Morgan Library Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/12.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/12.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The Museum of the Moving Image Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The Museum of the Moving Image Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/13.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/13.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">Museum of Natural History Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">Museum of Natural History Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/14.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/14.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">The New Museum Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">The New Museum Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                         <div class="content-card">
                             <div class="content-card__img">
-                                <img src="src/assets/img/museums/15.jpg" alt="">
-                                <img class="content__img" src="src/assets/img/icons/star.svg" alt="">
+                                <img class="content__img" src="src/assets/img/museums/15.jpg" alt="">
+                                <img class="content__img-star" src="src/assets/img/icons/star.svg" alt="">
                             </div>
-                            <p class="content-card__tittle">International Center of Photography Tour with Skip-the-Line Access</p>
+                            <h4 class="content-card__tittle">International Center of Photography Tour with Skip-the-Line Access</h4>
                             <p class="content-card__price">from $26 per person</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="content-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d146512.94227623538!2d73.21605724707824!3d54.9859924773012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43aafde2f601090b%3A0x5eefc33861a69b1a!2z0J7QvNGB0LosINCe0LzRgdC60LDRjyDQvtCx0Lsu!5e0!3m2!1sru!2sru!4v1574603781114!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9158.707166558543!2d73.37705698965028!3d54.9787669751087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa7f64f88fd9d2a9b!2zSWJpcyDQodC40LHQuNGA0Ywg0J7QvNGB0Lo!5e0!3m2!1sru!2sru!4v1575050013929!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </section>
     </main>
+    <script src="src\js\script.js"></script>
 </body>
 </html>
