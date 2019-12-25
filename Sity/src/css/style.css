@@ -6,7 +6,7 @@ font-family: 'Actor', sans-serif;
 
 * {
     box-sizing: border-box;
-}
+} 
 
 html{
     font-size: 10px;
@@ -440,7 +440,7 @@ body{
 
 .content-map {
     display: block;
-    position: sticky;
+    /* position: sticky; */
     width: 50%;
     height: 100vh;
     top: 0;
